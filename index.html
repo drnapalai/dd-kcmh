@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Development Workflow | DD-KCMH</title>
+    <style>
+      :root {
+        --bg: #f6f8fb;
+        --card: #ffffff;
+        --primary: #ff624d;
+        --accent: #fe9b8d;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --line: #dbe4f0;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: 'TH Sarabun New', 'Sarabun', 'Tahoma', 'Inter', 'Segoe UI', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+        font-size: 20px;
+      }
+              /* Removed blockquote.demo-quote styling */
+        @import url('https://fonts.googleapis.com/css2?family=TH+Sarabun+New:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1rem 3rem;
+      }
+      .hero {
+        background: linear-gradient(135deg, #ff624d, #fe9b8d);
+        color: #fff;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      .hero h1 { margin: 0 0 0.5rem; font-size: 2.3rem; }
+      .hero p { margin: 0; opacity: 0.95; }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+      }
+      h2 { margin-top: 0; font-size: 1.85rem; color: var(--primary); }
+      h3 { margin-bottom: 0.35rem; color: #0f3f86; }
+      .muted { color: var(--muted); margin-top: 0.2rem; }
+      .timeline {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .timeline li {
+        position: relative;
+        padding: 0.8rem 0.8rem 0.8rem 2.6rem;
+        border-left: 2px solid var(--line);
+        margin-left: 0.8rem;
+      }
+      .timeline li:last-child { border-left-color: transparent; }
+      .timeline .step {
+        position: absolute;
+        left: -0.72rem;
+        top: 0.85rem;
+        width: 1.45rem;
+        height: 1.45rem;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+      .grid {
+        display: grid;
+        gap: 1rem;
+      }
+      @media (min-width: 880px) {
+        .grid-2 { grid-template-columns: 1fr 1fr; }
+      }
+      ul { margin-top: 0.45rem; padding-left: 1.1rem; }
+      .kicker {
+        display: inline-block;
+        background: #ffe4df;
+        color: var(--primary);
+        border-radius: 999px;
+        padding: 0.2rem 0.65rem;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+      .note {
+        border-left: 4px solid #ff624d;
+        background: #fff1ee;
+        padding: 0.85rem 1rem;
+        border-radius: 8px;
+      }
+      .foot {
+        margin-top: 1.4rem;
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+      code {
+        background: #f3f4f6;
+        padding: 0.1rem 0.3rem;
+        border-radius: 4px;
+        font-family: 'IBM Plex Sans', 'Consolas', 'Menlo', 'Monaco', 'monospace';
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero">
+        <div class="kicker">ขั้นตอนการให้บริการ Dashboard</div>
+        <h1>เราทำงานร่วมกันอย่างไรในการสร้าง Dashboard ของคุณ</h1>
+        <p>
+          ฝ่ายข้อมูลและทรัพยากรสารสนเทศให้บริการข้อมูลจากระบบ HIS และคลังข้อมูลกลาง
+          เพื่อสนับสนุนการตัดสินใจ การบริหารจัดการ และการวิจัยอย่างมีมาตรฐาน โปร่งใส และปลอดภัย
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>ขั้นตอนการให้บริการตั้งแต่ต้นจนจบ (สำหรับผู้ขอใช้บริการ)</h2>
+        <ol class="timeline">
+          <li>
+            <span class="step">1</span>
+            <h3>รับคำขอ (Email Screening)</h3>
+            <p class="muted">
+              ผู้ขอใช้บริการส่งรายละเอียดเบื้องต้นจากอีเมลหน่วยงาน (<code>@chulahospital.org</code> หรือ <code>@chula.md</code>) มาที่ <code>napalai.poo@dd-kcmh.com</code>
+            </p>
+          </li>
+          <li>
+            <span class="step">2</span>
+            <h3>ตอบรับเบื้องต้น (ภายใน 3 วันทำการ)</h3>
+            <p class="muted">
+              ทีม BI ตรวจสอบความเป็นไปได้และแจ้งขั้นตอนถัดไปหรือเอกสารที่ต้องใช้
+            </p>
+          </li>
+          <li>
+            <span class="step">3</span>
+            <h3>ประชุมชี้แจงความต้องการ (Discovery &amp; Requirement Clarification)</h3>
+            <p class="muted">
+              ประชุมร่วมกันเพื่อกำหนดวัตถุประสงค์ทางธุรกิจ นิยาม KPI กลุ่มเป้าหมาย ความถี่รายงาน และขอบเขตข้อมูล
+            </p>
+          </li>
+          <li>
+            <span class="step">4</span>
+            <h3>ประเมินโครงการและจัดลำดับคิว</h3>
+            <p class="muted">
+              ทีมงานประเมินขอบเขตตามเกณฑ์บริการและจัดคิวตามผลกระทบต่อองค์กร ความพร้อมของข้อมูล และความถี่การรายงาน
+            </p>
+          </li>
+          <li>
+            <span class="step">5</span>
+            <h3>Data Mapping &amp; Model Preparation</h3>
+            <p class="muted">
+              ระบุแหล่งข้อมูล กำหนด logic การแปลงข้อมูล และเตรียมชุดข้อมูลที่ผ่านการกำกับดูแล (ไม่ใช่ real-time)
+            </p>
+          </li>
+          <li>
+            <span class="step">6</span>
+            <h3>สร้าง Dashboard (ฉบับร่าง)</h3>
+            <p class="muted">
+              สร้างฉบับร่างพร้อมกราฟ ตัวกรอง มุมมอง drill-down และ layout ที่สอดคล้องกับ workflow การตัดสินใจ
+            </p>
+          </li>
+          <li>
+            <span class="step">7</span>
+            <h3>ตรวจสอบ/ทดสอบ (Validation / UAT)</h3>
+            <p class="muted">
+              ผู้ขอใช้บริการและ Data Champion ตรวจสอบตัวเลขและ logic เทียบกับข้อมูลอ้างอิงก่อนอนุมัติ
+            </p>
+          </li>
+          <li>
+            <span class="step">8</span>
+            <h3>เผยแพร่ขึ้น Tableau Server</h3>
+            <p class="muted">
+              Dashboard ที่ผ่านการอนุมัติจะถูกเผยแพร่พร้อมกำหนดสิทธิ์การเข้าถึงตามบทบาท
+            </p>
+          </li>
+          <li>
+            <span class="step">9</span>
+            <h3>อบรมและปรับปรุงอย่างต่อเนื่อง</h3>
+            <p class="muted">
+              อบรมทีมงาน ติดตามการใช้งาน รับฟัง feedback และพัฒนาอย่างต่อเนื่อง
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="grid grid-2">
+        <article class="card">
+          <h2>สิ่งที่ต้องการจากผู้ขอใช้บริการ</h2>
+          <ul>
+            <li>ปัญหาการดำเนินงานหรือคำถามเชิงบริหารที่ชัดเจน</li>
+            <li>ตัวอย่างรายงาน/ไฟล์ที่ใช้งานจริง (ถ้ามี)</li>
+            <li>Data Champion ที่ได้รับมอบหมายจากหน่วยงาน</li>
+            <li>มีส่วนร่วมในการทดสอบ UAT และยืนยัน KPI</li>
+            <li>ตอบข้อสงสัยเกี่ยวกับ logic ทางธุรกิจอย่างรวดเร็วเมื่อมีประเด็น</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>สิ่งที่ผู้ขอใช้บริการจะได้รับจากเรา</h2>
+          <ul>
+            <li>ขั้นตอน BI ที่โปร่งใสและเป็นระบบตั้งแต่รับคำขอจนถึงเผยแพร่</li>
+            <li>ช่วยแปลง KPI ให้เป็น logic ข้อมูลที่ชัดเจน</li>
+            <li>แจ้งข้อจำกัดหรือช่องว่างของข้อมูลอย่างตรงไปตรงมา</li>
+            <li>มีฉบับร่างให้ตรวจสอบก่อนขึ้น production</li>
+            <li>อบรม/แนะนำการใช้งานก่อนเปิดใช้งานจริง</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2>เกณฑ์การให้บริการ (สรุป)</h2>
+        <div class="grid grid-2">
+          <div>
+            <h3>ลักษณะโครงการที่เข้าเกณฑ์</h3>
+            <ul>
+              <li>สอดคล้องกับเป้าหมายการบริหารหรือปรับปรุงการดำเนินงาน</li>
+              <li>ไม่ใช่การวิเคราะห์เฉพาะกิจส่วนบุคคล</li>
+              <li>ใช้ข้อมูลที่อัปเดตเป็นรอบ (รายเดือน/รายไตรมาส/รายครึ่งปี/รายปี)</li>
+              <li>ไม่ต้องการข้อมูลแบบ real-time</li>
+            </ul>
+          </div>
+          <div>
+            <h3>หลักการจัดลำดับความสำคัญ</h3>
+            <ul>
+              <li>ระดับผลกระทบ: ทั้งโรงพยาบาล &gt; ระดับฝ่าย/แผนก &gt; ระดับทีม</li>
+              <li>ความพร้อมของข้อมูลและความชัดเจนของความต้องการ</li>
+              <li>มี Data Champion ของหน่วยงาน</li>
+              <li>ความถี่ในการนำไปใช้ตัดสินใจเชิงปฏิบัติการ</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">
+          ความสามารถในการให้บริการ BI มีจำกัด การจัดคิวจะเป็นไปตามเกณฑ์ที่โปร่งใสเพื่อให้เกิดประโยชน์สูงสุดต่อโรงพยาบาล
+        </p>
+      </section>
+
+      <section class="card" style="text-align:center;">
+        <span style="font-weight:bold;">
+          ทีมของคุณนำเสนอเป้าหมายเชิงปฏิบัติการและ KPI<br>
+          ทีม BI ของเราจะแปลงเป้าหมายเหล่านั้นเป็น logic ข้อมูลที่ผ่านการกำกับดูแล<br>
+          เราออกแบบ Dashboard และตรวจสอบผลลัพธ์ร่วมกัน<br>
+          ก่อนเผยแพร่ขึ้น Tableau Server
+        </span>
+      </section>
+
+      <p class="foot">
+        อัปเดตขั้นตอนล่าสุด: 21 เมษายน 2026 (UTC)
+      </p>
+    </main>
+  </body>
+</html>
