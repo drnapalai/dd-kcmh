@@ -23,9 +23,8 @@
         line-height: 1.55;
         font-size: 20px;
       }
-              /* Removed blockquote.demo-quote styling */
-        @import url('https://fonts.googleapis.com/css2?family=TH+Sarabun+New:wght@400;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=TH+Sarabun+New:wght@400;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
       .container {
         max-width: 1100px;
         margin: 0 auto;
@@ -76,12 +75,36 @@
         font-size: 0.78rem;
         font-weight: 700;
       }
+      .timeline .step-head {
+        margin-bottom: 0.55rem;
+      }
+      .step-columns {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+      .step-party {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 0.7rem 0.85rem;
+        background: #fafcff;
+      }
+      .step-party h4 {
+        margin: 0 0 0.25rem;
+        color: #0f3f86;
+        font-size: 1rem;
+      }
+      .step-party p {
+        margin: 0;
+        color: var(--muted);
+      }
       .grid {
         display: grid;
         gap: 1rem;
       }
       @media (min-width: 880px) {
         .grid-2 { grid-template-columns: 1fr 1fr; }
+        .step-columns { grid-template-columns: 1fr 1fr; }
       }
       ul { margin-top: 0.45rem; padding-left: 1.1rem; }
       .kicker {
@@ -122,75 +145,6 @@
           ฝ่ายข้อมูลและทรัพยากรสารสนเทศให้บริการข้อมูลจากระบบ HIS และคลังข้อมูลกลาง
           เพื่อสนับสนุนการตัดสินใจ การบริหารจัดการ และการวิจัยอย่างมีมาตรฐาน โปร่งใส และปลอดภัย
         </p>
-      </section>
-
-      <section class="card">
-        <h2>ขั้นตอนการให้บริการตั้งแต่ต้นจนจบ (สำหรับผู้ขอใช้บริการ)</h2>
-        <ol class="timeline">
-          <li>
-            <span class="step">1</span>
-            <h3>กรอกคำขอใช้บริการ BI</h3>
-            <p class="muted">
-              ผู้ขอใช้บริการกรอก <a href="https://docs.google.com/forms/d/e/1FAIpQLSefzA-lbyAV1EEkneD8ZMq0d87Q0_LxabYvsYzcWQCtPauv8A/viewform?usp=header" target="_blank">Google Form</a> และส่งอีเมลแจ้งว่า "BI form submitted" ไปที่ <code>napalai.poo@dd-kcmh.com</code>
-            </p>
-          </li>
-          <li>
-            <span class="step">2</span>
-            <h3>ตอบรับเบื้องต้น (ภายใน 3 วันทำการ)</h3>
-            <p class="muted">
-              ทีม BI ตรวจสอบความเป็นไปได้และแจ้งขั้นตอนถัดไปหรือเอกสารที่ต้องใช้
-            </p>
-          </li>
-          <li>
-            <span class="step">3</span>
-            <h3>ประชุมชี้แจงความต้องการ (Discovery &amp; Requirement Clarification)</h3>
-            <p class="muted">
-              ประชุมร่วมกันเพื่อกำหนดวัตถุประสงค์ทางธุรกิจ นิยาม KPI กลุ่มเป้าหมาย ความถี่รายงาน และขอบเขตข้อมูล
-            </p>
-          </li>
-          <li>
-            <span class="step">4</span>
-            <h3>ประเมินโครงการและจัดลำดับคิว</h3>
-            <p class="muted">
-              ทีมงานประเมินขอบเขตตามเกณฑ์บริการและจัดคิวตามผลกระทบต่อองค์กร ความพร้อมของข้อมูล และความถี่การรายงาน
-            </p>
-          </li>
-          <li>
-            <span class="step">5</span>
-            <h3>Data Mapping &amp; Model Preparation</h3>
-            <p class="muted">
-              ระบุแหล่งข้อมูล กำหนด logic การแปลงข้อมูล และเตรียมชุดข้อมูลที่ผ่านการกำกับดูแล (ไม่ใช่ real-time)
-            </p>
-          </li>
-          <li>
-            <span class="step">6</span>
-            <h3>สร้าง Dashboard (ฉบับร่าง)</h3>
-            <p class="muted">
-              สร้างฉบับร่างพร้อมกราฟ ตัวกรอง มุมมอง drill-down และ layout ที่สอดคล้องกับ workflow การตัดสินใจ
-            </p>
-          </li>
-          <li>
-            <span class="step">7</span>
-            <h3>ตรวจสอบ/ทดสอบ (Validation / UAT)</h3>
-            <p class="muted">
-              ผู้ขอใช้บริการและ Data Champion ตรวจสอบตัวเลขและ logic เทียบกับข้อมูลอ้างอิงก่อนอนุมัติ
-            </p>
-          </li>
-          <li>
-            <span class="step">8</span>
-            <h3>เผยแพร่ขึ้น Tableau Server</h3>
-            <p class="muted">
-              Dashboard ที่ผ่านการอนุมัติจะถูกเผยแพร่พร้อมกำหนดสิทธิ์การเข้าถึงตามบทบาท
-            </p>
-          </li>
-          <li>
-            <span class="step">9</span>
-            <h3>อบรมและปรับปรุงอย่างต่อเนื่อง</h3>
-            <p class="muted">
-              อบรมทีมงาน ติดตามการใช้งาน รับฟัง feedback และพัฒนาอย่างต่อเนื่อง
-            </p>
-          </li>
-        </ol>
       </section>
 
       <section class="grid grid-2">
@@ -253,8 +207,140 @@
         </span>
       </section>
 
+      <section class="card">
+        <h2>ขั้นตอนการให้บริการตั้งแต่ต้นจนจบ (DD ทำอะไร / คุณและ Data Champion ทำอะไร)</h2>
+        <ol class="timeline">
+          <li>
+            <span class="step">1</span>
+            <h3 class="step-head">เริ่มคำขอใช้บริการ BI</h3>
+            <div class="step-columns">
+              <div class="step-party">
+                <h4>DD ทำอะไร</h4>
+                <p>เปิดรับคำขอ ตรวจสอบข้อมูลที่ส่งเข้ามา และเตรียมเข้าสู่ขั้นตอนประเมินเบื้องต้น</p>
+              </div>
+              <div class="step-party">
+                <h4>คุณ / Data Champion ทำอะไร</h4>
+                <p>กรอก <a href="https://docs.google.com/forms/d/e/1FAIpQLSefzA-lbyAV1EEkneD8ZMq0d87Q0_LxabYvsYzcWQCtPauv8A/viewform?usp=header" target="_blank">Google Form</a> และส่งอีเมล "BI form submitted" ไปที่ <code>napalai.poo@dd-kcmh.com</code></p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="step">2</span>
+            <h3 class="step-head">ตอบรับเบื้องต้น (ภายใน 3 วันทำการ)</h3>
+            <div class="step-columns">
+              <div class="step-party">
+                <h4>DD ทำอะไร</h4>
+                <p>ประเมินความเป็นไปได้ แจ้งขั้นตอนถัดไป และระบุเอกสารที่จำเป็นเพิ่มเติม</p>
+              </div>
+              <div class="step-party">
+                <h4>คุณ / Data Champion ทำอะไร</h4>
+                <p>ตอบกลับข้อมูลที่ขาด และยืนยันผู้ประสานงานหลักของหน่วยงาน</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="step">3</span>
+            <h3 class="step-head">ประชุมชี้แจงความต้องการ (Discovery &amp; Requirement Clarification)</h3>
+            <div class="step-columns">
+              <div class="step-party">
+                <h4>DD ทำอะไร</h4>
+                <p>ช่วยวางกรอบ KPI นิยามมิติข้อมูล และสรุปขอบเขตที่พัฒนาได้จริง</p>
+              </div>
+              <div class="step-party">
+                <h4>คุณ / Data Champion ทำอะไร</h4>
+                <p>ให้บริบทธุรกิจ เป้าหมาย และกรณีใช้งานจริงที่ต้องใช้ Dashboard</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="step">4</span>
+            <h3 class="step-head">ประเมินโครงการและจัดลำดับคิว</h3>
+            <div class="step-columns">
+              <div class="step-party">
+                <h4>DD ทำอะไร</h4>
+                <p>จัดลำดับตามผลกระทบองค์กร ความพร้อมข้อมูล และความถี่การใช้งานรายงาน</p>
+              </div>
+              <div class="step-party">
+                <h4>คุณ / Data Champion ทำอะไร</h4>
+                <p>ยืนยันขอบเขตที่ตกลงร่วมกัน และรับทราบ timeline ตามลำดับคิวบริการ</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="step">5</span>
+            <h3 class="step-head">Data Mapping &amp; Model Preparation</h3>
+            <div class="step-columns">
+              <div class="step-party">
+                <h4>DD ทำอะไร</h4>
+                <p>ระบุแหล่งข้อมูล ออกแบบ logic การแปลง และเตรียมข้อมูลภายใต้ data governance (ไม่ใช่ real-time)</p>
+              </div>
+              <div class="step-party">
+                <h4>คุณ / Data Champion ทำอะไร</h4>
+                <p>ตรวจสอบนิยามตัวชี้วัดและยืนยันความถูกต้องของ business logic ในแต่ละตัวแปร</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="step">6</span>
+            <h3 class="step-head">สร้าง Dashboard (ฉบับร่าง)</h3>
+            <div class="step-columns">
+              <div class="step-party">
+                <h4>DD ทำอะไร</h4>
+                <p>พัฒนาฉบับร่างพร้อมกราฟ ตัวกรอง drill-down และ layout ตาม workflow การตัดสินใจ</p>
+              </div>
+              <div class="step-party">
+                <h4>คุณ / Data Champion ทำอะไร</h4>
+                <p>ทบทวนความอ่านง่ายของหน้าจอ และเสนอปรับปรุงให้ตอบโจทย์การใช้งานจริง</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="step">7</span>
+            <h3 class="step-head">ตรวจสอบ/ทดสอบ (Validation / UAT)</h3>
+            <div class="step-columns">
+              <div class="step-party">
+                <h4>DD ทำอะไร</h4>
+                <p>ปรับแก้ตามผล UAT และตรวจความสอดคล้องของตัวเลขก่อนขึ้นใช้งานจริง</p>
+              </div>
+              <div class="step-party">
+                <h4>คุณ / Data Champion ทำอะไร</h4>
+                <p>เทียบผลกับข้อมูลอ้างอิง อนุมัติ KPI และลงนามยืนยันผลทดสอบร่วมกัน</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="step">8</span>
+            <h3 class="step-head">เผยแพร่ขึ้น Tableau Server</h3>
+            <div class="step-columns">
+              <div class="step-party">
+                <h4>DD ทำอะไร</h4>
+                <p>เผยแพร่ Dashboard พร้อมตั้งค่าสิทธิ์การเข้าถึงตามบทบาทผู้ใช้งาน</p>
+              </div>
+              <div class="step-party">
+                <h4>คุณ / Data Champion ทำอะไร</h4>
+                <p>ยืนยันรายชื่อผู้ใช้งานและสิทธิ์ที่ต้องการก่อนเปิดใช้งานในหน่วยงาน</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="step">9</span>
+            <h3 class="step-head">อบรมและปรับปรุงอย่างต่อเนื่อง</h3>
+            <div class="step-columns">
+              <div class="step-party">
+                <h4>DD ทำอะไร</h4>
+                <p>จัดอบรม ติดตาม adoption และพัฒนาปรับปรุงตาม feedback เชิงระบบ</p>
+              </div>
+              <div class="step-party">
+                <h4>คุณ / Data Champion ทำอะไร</h4>
+                <p>สะท้อนปัญหาการใช้งานจริง รวบรวมข้อเสนอจากทีม และร่วมวางแผนรอบพัฒนาถัดไป</p>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
       <p class="foot">
-        อัปเดตขั้นตอนล่าสุด: 21 เมษายน 2026 (UTC)
+        อัปเดตขั้นตอนล่าสุด: 27 เมษายน 2026 (UTC)
       </p>
     </main>
   </body>
