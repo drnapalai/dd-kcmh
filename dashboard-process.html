@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Development Workflow | DD-KCMH</title>
+    <style>
+      :root {
+        --bg: #f6f8fb;
+        --card: #ffffff;
+        --primary: #ff624d;
+        --accent: #fe9b8d;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --line: #dbe4f0;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", Tahoma, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1rem 3rem;
+      }
+      .hero {
+        background: linear-gradient(135deg, #ff624d, #fe9b8d);
+        color: #fff;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      .hero h1 { margin: 0 0 0.5rem; font-size: 1.8rem; }
+      .hero p { margin: 0; opacity: 0.95; }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+      }
+      h2 { margin-top: 0; font-size: 1.35rem; color: var(--primary); }
+      h3 { margin-bottom: 0.35rem; color: #0f3f86; }
+      .muted { color: var(--muted); margin-top: 0.2rem; }
+      .timeline {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .timeline li {
+        position: relative;
+        padding: 0.8rem 0.8rem 0.8rem 2.6rem;
+        border-left: 2px solid var(--line);
+        margin-left: 0.8rem;
+      }
+      .timeline li:last-child { border-left-color: transparent; }
+      .timeline .step {
+        position: absolute;
+        left: -0.72rem;
+        top: 0.85rem;
+        width: 1.45rem;
+        height: 1.45rem;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+      .grid {
+        display: grid;
+        gap: 1rem;
+      }
+      @media (min-width: 880px) {
+        .grid-2 { grid-template-columns: 1fr 1fr; }
+      }
+      ul { margin-top: 0.45rem; padding-left: 1.1rem; }
+      .kicker {
+        display: inline-block;
+        background: #ffe4df;
+        color: var(--primary);
+        border-radius: 999px;
+        padding: 0.2rem 0.65rem;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+      .note {
+        border-left: 4px solid #ff624d;
+        background: #fff1ee;
+        padding: 0.85rem 1rem;
+        border-radius: 8px;
+      }
+      .foot {
+        margin-top: 1.4rem;
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+      code { background: #f3f4f6; padding: 0.1rem 0.3rem; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero">
+        <div class="kicker">Dashboard Service Workflow</div>
+        <h1>How We Work Together to Build Your Dashboard</h1>
+        <p>
+          ฝ่ายข้อมูลและทรัพยากรสารสนเทศให้บริการข้อมูลจากระบบ HIS และคลังข้อมูลกลาง
+          เพื่อสนับสนุนการตัดสินใจ การบริหารจัดการ และการวิจัยอย่างมีมาตรฐาน โปร่งใส และปลอดภัย
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Updated End-to-End Flow (for collaborators)</h2>
+        <ol class="timeline">
+          <li>
+            <span class="step">1</span>
+            <h3>Request Intake (Email Screening)</h3>
+            <p class="muted">
+              Requestor sends initial details from an official email (<code>@chulahospital.org</code> or <code>@chula.md</code>) to <code>napalai.poo@dd-kcmh.com</code>.
+            </p>
+          </li>
+          <li>
+            <span class="step">2</span>
+            <h3>Initial Response (within 3 business days)</h3>
+            <p class="muted">
+              BI team confirms feasibility and sends next steps or required documents.
+            </p>
+          </li>
+          <li>
+            <span class="step">3</span>
+            <h3>Discovery &amp; Requirement Clarification</h3>
+            <p class="muted">
+              Joint session to define business objective, KPI definitions, audience, report frequency, and data boundaries.
+            </p>
+          </li>
+          <li>
+            <span class="step">4</span>
+            <h3>Project Evaluation &amp; Prioritization</h3>
+            <p class="muted">
+              We evaluate scope against service criteria and queue based on organizational impact, data readiness, and reporting frequency.
+            </p>
+          </li>
+          <li>
+            <span class="step">5</span>
+            <h3>Data Mapping &amp; Model Preparation</h3>
+            <p class="muted">
+              Identify source systems, define transformation logic, and prepare governed datasets (non-real-time).
+            </p>
+          </li>
+          <li>
+            <span class="step">6</span>
+            <h3>Dashboard Build (Draft Version)</h3>
+            <p class="muted">
+              Build draft with charts, filters, drill-down views, and layout aligned to decision workflow.
+            </p>
+          </li>
+          <li>
+            <span class="step">7</span>
+            <h3>Validation / UAT</h3>
+            <p class="muted">
+              Requestor and Data Champion review numbers and logic against existing references before sign-off.
+            </p>
+          </li>
+          <li>
+            <span class="step">8</span>
+            <h3>Publish to Tableau Server</h3>
+            <p class="muted">
+              Approved dashboard is released with role-based permissions and access controls.
+            </p>
+          </li>
+          <li>
+            <span class="step">9</span>
+            <h3>Training &amp; Continuous Improvement</h3>
+            <p class="muted">
+              Team onboarding, usage monitoring, feedback collection, and iterative enhancement.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="grid grid-2">
+        <article class="card">
+          <h2>What We Need from Users</h2>
+          <ul>
+            <li>A clear operational problem or management question.</li>
+            <li>Example reports/manual files (if available).</li>
+            <li>A designated Data Champion from the requesting unit.</li>
+            <li>Active participation during UAT and KPI confirmation.</li>
+            <li>Timely clarifications when business logic is ambiguous.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>What Users Can Expect from Us</h2>
+          <ul>
+            <li>Transparent, structured BI workflow from intake to publish.</li>
+            <li>Support in translating KPI into robust data logic.</li>
+            <li>Clear communication about data limitations or gaps.</li>
+            <li>A reviewable draft before production release.</li>
+            <li>Onboarding/training before go-live.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2>Service Criteria (Summary)</h2>
+        <div class="grid grid-2">
+          <div>
+            <h3>Eligible Project Characteristics</h3>
+            <ul>
+              <li>Aligned with management/operational improvement goals.</li>
+              <li>Not intended primarily for ad-hoc personal analysis.</li>
+              <li>Uses periodic refreshed data (monthly/quarterly/biannual/yearly).</li>
+              <li>Does not require real-time data serving.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Prioritization Logic</h3>
+            <ul>
+              <li>Impact level: hospital-wide &gt; department &gt; team-level.</li>
+              <li>Data readiness and requirement clarity.</li>
+              <li>Availability of a unit-level Data Champion.</li>
+              <li>Usage frequency in operational decision cycles.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">
+          BI capacity is limited. Queue scheduling is governed by transparent criteria to maximize value to the hospital.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Suggested Website / Demo Wording</h2>
+        <p>
+          Your team brings operational context and KPI goals. Our BI team translates those goals into governed data logic,
+          designs the dashboard, and validates outcomes with you before release to Tableau Server.
+        </p>
+      </section>
+
+      <p class="foot">
+        Last updated flow: April 21, 2026 (UTC). This version replaces the previous outdated process diagram.
+      </p>
+    </main>
+  </body>
+</html>
